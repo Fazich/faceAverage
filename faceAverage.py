@@ -12,6 +12,17 @@ import math
 import time
 import sys
 
+#配置区域
+#图片文件后缀
+endName = 'jpg'
+#图片文件夹路径
+folderPath = 'presidents/'
+#生成图片宽度
+imgWidth = 390
+#生成图片高度
+imgHeight = 567
+#生成文件名及格式
+resultImg = 'president.jpg'
 
 # Read points from text files in directory
 def readPoints(path):
@@ -45,7 +56,7 @@ def readImages(path):
 
     # List all files in the directory and read points from text files one by one
     for filePath in sorted(os.listdir(path)):
-        if filePath.endswith(".gif"):
+        if filePath.endswith("."+endName):
             # Read image found.
             img = cv2.imread(os.path.join(path, filePath));
 
@@ -192,11 +203,11 @@ def warpTriangle(img1, img2, t1, t2):
 if __name__ == '__main__':
 
     # path = 'presidents/'
-    path = 'male'
+    path = folderPath
 
     # Dimensions of output image
-    w = 390;
-    h = 567;
+    w = imgWidth;
+    h = imgHeight;
 
     # Read points for all images
     allPoints = readPoints(path);
@@ -297,5 +308,5 @@ if __name__ == '__main__':
 
     #save image
     print '绘制完成，开始保存!'
-    cv2.imwrite("male.jpg", 255 * output)
+    cv2.imwrite(resultImg, 255 * output)
 

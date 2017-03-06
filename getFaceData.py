@@ -5,7 +5,15 @@ import requests
 import os
 
 #配置区域
-path = 'male/'
+
+#图片文件路径
+path = 'presidents/'
+#face++参数
+api_key = ''
+api_secret = ''
+#图片文件后缀
+endName = 'jpg'
+#特征点key
 keyPoints = ['mouth_upper_lip_left_contour2',
              'contour_chin',
              'mouth_upper_lip_left_contour1',
@@ -99,8 +107,8 @@ def readFile():
 def requestData():
     url = "https://api-cn.faceplusplus.com/facepp/v3/detect"
     param = {
-        'api_key':'',
-        'api_secret':'',
+        'api_key':api_key,
+        'api_secret':api_secret,
         # 'img_url': '',
         'return_landmark':1
     }
@@ -109,7 +117,7 @@ def requestData():
     for index,file in enumerate(fileList):
         # fileName = file[0:8]
         fileName = file
-        if file.endswith(".gif"):
+        if file.endswith("."+endName):
             if not os.path.isfile(path+fileName+'.txt'):
                 files = {'image_file': open(path + file, 'rb')}
                 print '请求fece++接口中...获取'+file+'图像信息'
