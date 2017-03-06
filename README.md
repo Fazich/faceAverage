@@ -9,7 +9,7 @@ getFaceData.py---------调用face++获取人脸特征识别点
 faceAverage.py---------平均脸生成
 
 ## 使用说明
-先运行getFaceData.py获取该文件夹下的人脸特征是别点
+先运行getFaceData.py获取该文件夹下的人脸特征识别点
 
 在运行faceAverage.py生成该文件夹下的平均脸结果
 
