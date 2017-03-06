@@ -12,7 +12,9 @@ faceAverage.py---------平均脸生成
 在运行faceAverage.py生成该文件夹下的平均脸结果
 
 ## 示例结果
-明星平均脸：
+### 明星平均脸：
+
 ![明星平均脸](http://7xr8op.com1.z0.glb.clouddn.com/%E6%98%8E%E6%98%9F.jpg)
-政界成功人士平均脸
+### 政界成功人士平均脸:
+
 ![政界成功人士平均脸](http://7xr8op.com1.z0.glb.clouddn.com/%E6%94%BF%E7%95%8C.jpg)
